@@ -1,0 +1,202 @@
+{% load static %}
+
+<!--div class="py-1 bg-primary">
+    <div class="container">
+        <div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
+            <div class="col-lg-12 d-block">
+                <div class="row d-flex">
+                    <div class="col-md pr-4 d-flex topper align-items-center">
+                        <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="fa fa-phone"></span></div>
+                        <span class="text">+ 1235 2355 98</span>
+                    </div>
+                    <div class="col-md pr-4 d-flex topper align-items-center">
+                        <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="fa fa-envelope-square"></span></div>
+                        <span class="text">youremail@email.com</span>
+                    </div>
+                    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
+                        <span class="text">3-5 Business days delivery &amp; Free Returns</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">PLP Online Store</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto mr-auto">
+          <li class="nav-item active"><a href="index.html" class="nav-link dark-grey-text font-weight-bold">Home</a></li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+          <div class="dropdown-menu text-white" aria-labelledby="dropdown04">
+            {% for category in links %}
+              <a class="dropdown-item" href="{{category.get_url}}">{{category.name}}</a>
+              {% endfor %}
+              <a class="dropdown-item" href="wishlist.html">Wishlist</a>
+            <a class="dropdown-item" href="product-single.html">Single Product</a>
+            <a class="dropdown-item" href="cart.html">Cart</a>
+            <a class="dropdown-item" href="checkout.html">Checkout</a>
+            
+        </div>
+        </li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-search"></i></a></li>
+          <li class="nav-item cta cta-colored"><a href="#" id="cart-total" class="nav-link"-><span class="fa fa-shopping-cart"></span>[{{cartItems}}]</a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-user"></i> Login</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </nav->
+
+
+
+  <nav class="navbar fixed-top navbar-expand-lg  navbar-light scrolling-navbar white " id="ftco-navbar">
+    <div class="container">
+        <!-- SideNav slide-out button ->
+        
+        <a class="navbar-brand font-weight-bold" href="#"><strong>PLP Online Store</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4"
+            aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link dark-grey-text font-weight-bold" href="#"><i class="fas fa-home blue-text"></i> Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link dark-grey-text font-weight-bold" href="#"><i class="fas fa-info blue-text"></i> About <span class="sr-only">(current)</span></a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link dark-grey-text font-weight-bold" href="#"><i class="fas fa-envelope blue-text"></i> Blog <span class="sr-only">(current)</span></a>
+        </li>
+          <li class="nav-item">
+            <a class="nav-link dark-grey-text font-weight-bold" href="#"> Store <span class="sr-only">(current)</span></a>
+        </li>
+                <li class="nav-item">
+                    <a class="nav-link dark-grey-text font-weight-bold" href="#"><i class="fas fa-envelope blue-text"></i> Contact <span class="sr-only">(current)</span></a>
+                </li>
+                
+                <li class="nav-item">
+                  <a class="nav-link dark-grey-text font-weight-bold" href="#"><i class="fas fa-shopping-cart blue-text"></i>[]</a>
+              </li>
+                
+                <li class="nav-item ml-3">
+                    <a class="nav-link dark-grey-text font-weight-bold" href="#"><i class="fas fa-cog blue-text"></i> Settings</a>
+                </li>
+                <li class="nav-item dropdown ml-3">
+                    <a class="nav-link dropdown-toggle dark-grey-text font-weight-bold" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false"><i class="fas fa-user blue-text"></i> Profile </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-cyan" aria-labelledby="navbarDropdownMenuLink-4">
+                        <a class="dropdown-item waves-effect waves-light" href="#">My account</a>
+                        <a class="dropdown-item waves-effect waves-light" href="#">Log out</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav-->
+
+<nav class="navbar navbar-expand-md navbar-light fixed-top scrolling-navbar">
+  <div class="container-fluid">
+    <!-- Brand -->
+    <a class="navbar-brand font-weight-bold" href="{% url 'home' %}"><strong>PLP Online Store</strong></a>
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+      <!-- Right -->
+      <ul class="navbar-nav ml-auto">
+        {% if item_count > 0 %}
+        <li class="nav-item dropdown dropdown-hover bg-primary" >
+        
+          <a href="{% url 'cart_detail' %}" class="nav-link waves-effect cart bg-primary" id="navbarDropdownMenuLink3" data-toggle="dropdown">
+            <span class="badge badge-pill bg-primary"></span>
+            <i class="fas fa-shopping-cart pl-0">[{{item_count}}]</i>
+          </a>
+          <div id="dropdown-cart" class="dropdown-menu dropdown-menu-right p-3">
+      
+          </div>
+          
+        </li>
+        {% endif %}
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink3" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="true">
+            <i class="south africa flag m-0"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item waves-effect waves-light" href="#!">Action</a>
+            <a class="dropdown-item" href="#!">Another action</a>
+            <a class="dropdown-item" href="#!">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'store' %}" class="nav-link waves-effect">
+            Shop
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'cart_detail' %}" class="nav-link waves-effect">
+            Cart
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#!" class="nav-link waves-effect">
+            Contact
+          </a>
+        </li>
+        {% if request.user.is_authenticated and request.user.first_name %}
+        <!--li class="nav-item">
+          <a href="#" class="nav-link waves-effect waves-effect waves-light">
+            {{ request.user.first_name }}
+          </a>
+        </li-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink3" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="true">{{ request.user.first_name }}</a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item waves-effect waves-light" href="{% url 'order_history' %}">Order History</a>
+            <a class="dropdown-item" href="#!">Another action</a>
+            <a class="dropdown-item" href="#!">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'customer_logout' %}" class="nav-link waves-effect waves-effect waves-light">
+            logout
+          </a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a href="{% url 'customer_login' %}" type="button" class="nav-link waves-effect waves-effect waves-light">
+            Sign In
+          </a>
+      
+        </li>
+        <li class="nav-item pl-2 mb-2 mb-md-0">
+          <a href="{% url 'customer_register' %}" type="button" class="btn btn-outline-info btn-md btn-rounded btn-navbar waves-effect waves-light">
+            Sign Up
+          </a>
+      
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+    <!-- Links -->
+  </div>
+</nav>
+

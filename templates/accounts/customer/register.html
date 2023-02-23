@@ -1,0 +1,113 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %} Register {% endblock %}
+
+{% block content %}
+
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-content padding-y" style="min-height:84vh">
+
+  <!-- ============================ COMPONENT REGISTER   ================================= -->
+  {% if not form.is_valid %}
+  <div class="card mx-auto" style="max-width:500px; margin-top:40px;">
+    <article class="card-body">
+      <h4 class="card-title">Sign up</h4>
+      <form method="post">
+        {% csrf_token %}
+       
+
+        <div class="form-group">
+
+          <label for="id_first_name">First name:</label>
+
+
+          <input type="text" class="form-control" name="first_name" maxlength="100" required="" id="id_first_name">
+
+          </div>
+
+
+          <div class="form-group">
+
+          <label for="id_last_name">Last name:</label>
+
+
+          <input type="text" class="form-control" name="last_name" maxlength="100" required="" id="id_last_name">
+          </div>
+
+
+
+
+          <div class="form-group">
+          <label for="id_username">Username:</label>
+
+
+          <input type="text" class="form-control" name="username" maxlength="150" autofocus="" required="" id="id_username">
+
+          <br>
+          <span class="helptext">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
+          </div>
+
+
+
+
+          <div class="form-group">
+          <label for="id_password1">Password:</label>
+
+
+          <input type="password" class="form-control" name="password1" autocomplete="new-password" required="" id="id_password1">
+
+          <br>
+          <span class="helptext">
+            <ul>
+              <li>Your password can’t be too similar to your other personal information.</li>
+              <li>Your password must contain at least 8 characters.</li>
+              <li>Your password can’t be a commonly used password.</li>
+              <li>Your password can’t be entirely numeric.</li>
+            </ul>
+          </span>
+          </div>
+
+
+
+
+          <div class="form-group">
+          <label for="id_password2">Password confirmation:</label>
+
+
+          <input type="password" class="form-control" name="password2" autocomplete="new-password" required="" id="id_password2">
+
+          <br>
+          <span class="helptext">Enter the same password as before, for verification.</span>
+          </div>
+
+
+
+
+          <div class="form-group">
+          <label for="id_email">Email:</label>
+
+
+          <input type="email" class="form-control" name="email" maxlength="250" required="" id="id_email">
+
+          <br>
+          <span class="helptext">eg. youremail@gmail.com</span>
+            </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block"> SignUp </button>
+        </div> <!-- form-group end.// -->
+      </form>
+    </article><!-- card-body.// -->
+  </div>
+  {% else %}
+  <p class="text-center mt-4">Your account has been created</p>
+  <a href="{% url 'home' %}">go to home page</a>
+  {% endif %}<!-- card .// -->
+  <p class="text-center mt-4">Have an account? <a href="">Log In</a></p>
+  <br><br>
+  <!-- ============================ COMPONENT REGISTER  END.// ================================= -->
+
+
+</section>
+
+{% endblock content %}

@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "_variables-custom.css",
+	"sources": [
+		"_variables-custom.scss",
+		"bootstrap-assets/_functions.scss"
+	],
+	"names": [],
+	"mappings": ""
+}

@@ -1,0 +1,14 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+<div class="jumbotron jumbotron-image color-grey-light">
+    <div class="hero-wrap hero-bread overlay-gradient" style="background-image: url('{% static 'img/plain-logo.png' %}');"> 
+      <div class="container text-center white-text py-5">
+        <h1 class="mb-3">Thank you for purchasing with us</h1>
+        <p class="mb-0">Your order number is: <b>{{customer_order.id}}</b></p>
+        <p>Your order has been made. Check Your email for more information</p>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}

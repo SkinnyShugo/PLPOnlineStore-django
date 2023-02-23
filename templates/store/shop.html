@@ -1,0 +1,674 @@
+{% extends 'base/base.html' %}
+{% block title %} Store {% endblock %}
+{% load static %}
+{% block content %}
+
+<section class="section-content padding-y bg">
+    <div class="container">
+    <!-- ============================ COMPONENT BOOTSTRAP CARD WITH  IMG ================================= -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card bg-dark">
+                  <img src="{% static 'img/banners/fruit-veggies.jpg' %}" class="card-img opacity" >
+                  <div class="card-img-overlay text-white">
+                    <h5 class="card-title text-white">Fruits and Vegs</h5>
+                    <p class="card-text">This is a wider card with text below</p>
+                    <a href="#" class="btn btn-light">Shop now</a>
+                  </div>
+                </div>
+            </div> <!-- col.// -->
+            <div class="col-md-4">
+                <div class="card bg-dark">
+                  <img src="{% static 'img/banners/Juice-Beverage.jpg' %}" class="card-img opacity">
+                  <div class="card-img-overlay text-white">
+                    <h5 class="card-title text-white">Beverage</h5>
+                    <p class="card-text">This is a wider card with text below</p>
+                    <a href="#" class="btn btn-light">Shop now</a>
+                  </div>
+                </div>
+            </div> <!-- col.// -->
+            <div class="col-md-4">
+                <div class="card bg-dark">
+                  <img src="{% static 'img/banners/grocery-store.jpg' %}" class="card-img opacity" >
+                  <div class="card-img-overlay text-white">
+                    <h5 class="card-title text-white">Grocery</h5>
+                    <p class="card-text">This is a wider card with text below</p>
+                    <a href="#" class="btn btn-light">Shop now</a>
+                  </div>
+                </div>
+            </div> <!-- col.// -->
+        </div> <!-- row.// -->
+        
+<br><br>
+
+
+<div class="row">
+		<div class="col-md-4">
+<!-- ============================ COMPONENT BANNER 1 ================================= -->
+<div class="card-banner" style="height:220px; background-image: url('{% static 'img/banners/Essential-Oils.jpg' %}');">
+  <article class="card-body caption">
+	<h5 class="card-title text-white">Health & Beauty</h5>
+	<p>No matter how far along you are in your sophistication as an amateur astronomer, there is always one.</p>
+	<a href="#" class="btn btn-warning"> Shop now </a>
+  </article>
+</div>
+<!-- ======================= COMPONENT BANNER 1  END .// ============================ -->
+		</div> <!-- col.// -->
+		<div class="col-md-4">
+<!-- ============================ COMPONENT BANNER 2 ================================= -->
+<div class="card-banner" style="height:220px; background-image: url('{% static 'img/banners/clothing.png' %}');">
+  <article class="card-body bg-gradient-green text-white">
+	<h5 class="card-title text-white">Clothing</h5>
+	<p>No matter how far along you are in your sophistication as an amateur astronomer, there is always one.</p>
+	<a href="#" class="btn btn-warning"> Shop now </a>
+  </article>
+</div>
+<!-- ============================ COMPONENT BANNER 2  END .// =========================== -->
+		</div> <!-- col.// -->
+		<div class="col-md-4">
+<!-- ============================ COMPONENT BANNER 3 ================================= -->
+<div class="card-banner" style="height:220px; background-image: url('{% static 'img/banners/5-Local-brands-1.png' %}');">
+  <article class="card-img-overlay bg-gradient-red text-white">
+	<h5 class="card-title text-white">Local Brands</h5>
+	<p>No matter how far along you are in your sophistication as an amateur astronomer, there is always one.</p>
+	<a href="#" class="btn btn-warning"> Shop now </a>
+  </article>
+</div>
+<!-- ============================ COMPONENT BANNER 3  END .// ================================= -->
+		</div> <!-- col.// -->
+</div> <!-- row.// -->
+
+    <!-- ============================ COMPONENTBOOTSTRAP CARD IMG  END .// ================================= -->
+    </div>
+    </section>
+
+<section class="section-content padding-y bg">
+<div class="container">
+
+<!-- ============================ COMPONENTS 1  ================================= -->
+<div class="row">
+	<!--div class="col-md-3">
+		<figure class="card card-product-grid">
+			<div class="img-wrap"> <img src="../images/items/5.jpg"> </div>
+			<figcaption class="info-wrap border-top">
+				<a href="#" class="title">Bell & Ross Nightlum</a>
+				<div class="price mt-2">$299.00</div> <!-- price-wrap.// ->
+			</figcaption>
+		</figure> <!-- card // ->
+	</div--> <!-- col.// ->
+	<div class="col-md-3">
+		<figure class="card card-product-grid">
+			<div class="img-wrap"> 
+				<img src="../images/items/6.jpg">
+				<span class="topbar">
+					<a href="#" class="float-right"><i class="fa fa-heart"></i></a>
+				</span>
+				<a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
+			</div>
+			<figcaption class="info-wrap border-top">
+				<a href="#" class="title">Leather Sleeve - Macbook 13’’</a>
+				<div class="price mt-2">$3753.00</div> <!-- price-wrap.// ->
+			</figcaption>
+		</figure> <!-- card // 
+  </div> <!-- col.// -->
+  {% for product in products %}
+	<div class="col-md-3">
+		<figure class="card card-product-grid">
+			<div class="img-wrap">
+				<span class="topbar">
+					<span class="badge badge-success"> NEW </span>
+				</span>
+        <img src="{{product.imageURL}}">
+        <a class="btn-overlay" href="{{product.get_url}}"><i class="fa fa-search-plus"></i> Quick view</a>
+			</div>
+			<figcaption class="info-wrap border-top">
+				<a href="#" class="title">{{product.name}}</a>
+					<div class="price-wrap mt-2">
+						<span class="price">R{{product.price}}</span>
+						
+					</div> <!-- price-wrap.// -->
+			</figcaption>
+		</figure> <!-- card // -->
+  </div>
+  {% endfor %}
+  <!-- col.// ->
+	<div class="col-md-3">
+		<figure class="card card-product-grid">
+			<div class="img-wrap"> 
+				<img src="../images/items/1.jpg">
+			</div>
+			<figcaption class="info-wrap border-top text-center">
+				<small class="text-uppercase font-weight-bolder text-warning">ELECTRONICS</small>
+				<p><a href="#" class="title">IKEA Poäng Swivel Chair</a></p>	
+			</figcaption>
+		</figure> <!-- card // ->
+	</div> <!-- col.// -->
+</div>
+<!-- ============================ COMPONENTS 1  END .// ================================= -->
+
+<br>
+<hr>
+
+
+<div class="row mb-4">
+    <div class="col-md-5 col-lg-3 col-xl-3">
+
+      <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
+        <img class="img-fluid w-100"
+          src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg"
+          alt="Sample">
+        <a href="#!">
+          <div class="mask">
+            <img class="img-fluid w-100"
+              src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg">
+            <div class="mask rgba-black-slight"></div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+    <div class="col-md-7 col-lg-9 col-xl-9">
+      <div class="row">
+        <div class="col-lg-7 col-xl-7">
+
+          <h5>Fantasy T-shirt</h5>
+          <p class="mb-2 text-muted text-uppercase small">Shirts</p>
+          <ul class="rating">
+            <li>
+              <i class="fas fa-star fa-sm text-primary"></i>
+            </li>
+            <li>
+              <i class="fas fa-star fa-sm text-primary"></i>
+            </li>
+            <li>
+              <i class="fas fa-star fa-sm text-primary"></i>
+            </li>
+            <li>
+              <i class="fas fa-star fa-sm text-primary"></i>
+            </li>
+            <li>
+              <i class="fas fa-star fa-sm text-primary"></i>
+            </li>
+          </ul>
+          <hr>
+          <p class="mb-lg-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+            sapiente illo. Sit error voluptas repellat rerum quidem, soluta enim perferendis
+            voluptates laboriosam. Distinctio, officia quis dolore quos sapiente tempore alias.</p>
+
+        </div>
+        <div class="col-lg-5 col-xl-5">
+
+          <h6 class="mb-3"><span>$12.99</span></h6>
+          <div class="my-4">
+            <button type="button" class="btn btn-primary btn-md mr-1 mb-2"><i
+                class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
+            <button type="button" class="btn btn-light btn-md mr-1 mb-2"><i
+                class="fas fa-info-circle pr-2"></i>Details</button>
+          </div>
+          <button type="button" class="btn btn-danger btn-md px-3 mb-lg-2 material-tooltip-main"
+            data-toggle="tooltip" data-placement="top" title="Add to wishlist"><i
+              class="far fa-heart"></i></button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col-md-5 col-lg-3 col-xl-3">
+
+      <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
+        <img class="img-fluid w-100"
+          src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13a.jpg"
+          alt="Sample">
+        <h4 class="mb-0"><span class="badge badge-dark badge-pill badge-news">Sold out</span></h4>
+        <a href="#!">
+          <div class="mask">
+            <img class="img-fluid w-100"
+              src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13.jpg">
+            <div class="mask rgba-black-slight"></div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+    <div class="col-md-7 col-lg-9 col-xl-9">
+      <div class="row">
+        <div class="col-lg-7 col-xl-7">
+
+          <h5>Fantasy T-shirt</h5>
+          <p class="mb-2 text-muted text-uppercase small">Shirts</p>
+          <ul class="rating">
+            <li>
+              <i class="fas fa-star fa-sm text-primary"></i>
+            </li>
+            <li>
+              <i class="fas fa-star fa-sm text-primary"></i>
+            </li>
+            <li>
+              <i class="fas fa-star fa-sm text-primary"></i>
+            </li>
+            <li>
+              <i class="fas fa-star fa-sm text-primary"></i>
+            </li>
+            <li>
+              <i class="far fa-star fa-sm text-primary"></i>
+            </li>
+          </ul>
+          <hr>
+          <p class="mb-lg-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+            sapiente illo. Sit error voluptas repellat rerum quidem, soluta enim perferendis
+            voluptates laboriosam. Distinctio, officia quis dolore quos sapiente tempore alias.</p>
+
+        </div>
+        <div class="col-lg-5 col-xl-5">
+
+          <h6 class="mb-3">
+            <span class="text-danger mr-1">$12.99</span>
+            <span class="text-grey"><s>$36.99</s></span>
+          </h6>
+          <div class="my-4">
+            <button type="button" class="btn btn-primary btn-md mr-1 mb-2"><i
+                class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
+            <button type="button" class="btn btn-light btn-md mr-1 mb-2"><i
+                class="fas fa-info-circle pr-2"></i>Details</button>
+          </div>
+          <button type="button" class="btn btn-danger btn-md px-3 mb-lg-2 material-tooltip-main"
+            data-toggle="tooltip" data-placement="top" title="Add to wishlist"><i
+              class="far fa-heart"></i></button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col-md-5 col-lg-3 col-xl-3">
+
+      <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
+        <img class="img-fluid w-100"
+          src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14a.jpg"
+          alt="Sample">
+        <h4 class="mb-0"><span class="badge badge-primary badge-pill badge-news">Sale</span></h4>
+        <a href="#!">
+          <div class="mask">
+            <img class="img-fluid w-100"
+              src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14.jpg">
+            <div class="mask rgba-black-slight"></div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+    <div class="col-md-7 col-lg-9 col-xl-9">
+      <div class="row">
+        <div class="col-lg-7 col-xl-7">
+
+          <h5>Fantasy T-shirt</h5>
+          <p class="mb-2 text-muted text-uppercase small">Shirts</p>
+          <ul class="rating">
+            <li>
+              <i class="fas fa-star fa-sm text-primary"></i>
+            </li>
+            <li>
+              <i class="fas fa-star fa-sm text-primary"></i>
+            </li>
+            <li>
+              <i class="fas fa-star fa-sm text-primary"></i>
+            </li>
+            <li>
+              <i class="fas fa-star fa-sm text-primary"></i>
+            </li>
+            <li>
+              <i class="fas fa-star fa-sm text-primary"></i>
+            </li>
+          </ul>
+          <hr>
+          <p class="mb-lg-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+            sapiente illo. Sit error voluptas repellat rerum quidem, soluta enim perferendis
+            voluptates laboriosam. Distinctio, officia quis dolore quos sapiente tempore alias.</p>
+
+        </div>
+        <div class="col-lg-5 col-xl-5">
+
+          <h6 class="mb-3">
+            <span class="text-danger mr-1">$12.99</span>
+            <span class="text-grey"><s>$36.99</s></span>
+          </h6>
+          <div class="my-4">
+            <button type="button" class="btn btn-primary btn-md mr-1 mb-2"><i
+                class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
+            <button type="button" class="btn btn-light btn-md mr-1 mb-2"><i
+                class="fas fa-info-circle pr-2"></i>Details</button>
+          </div>
+          <button type="button" class="btn btn-danger btn-md px-3 mb-lg-2 material-tooltip-main"
+            data-toggle="tooltip" data-placement="top" title="Add to wishlist"><i
+              class="far fa-heart"></i></button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- ============================ COMPONENTS 2  ================================= -->
+<div class="row">
+	 <!-- col.// -->
+   <div class="container">
+     
+	<div class="col-md-3">
+		<figure class="card card-product-grid">
+			<a href="#" class="img-wrap"> 
+				<img src="../images/items/3.jpg">
+			</a>
+			<figcaption class="info-wrap">
+				<a href="#" class="title">Fjällräven Kånken Backpack Blue Ridge</a>
+				<div class="mt-2">
+					<var class="price">$84.00</var> <!-- price-wrap.// -->
+					<a href="#" class="btn btn-sm btn-outline-primary float-right">Add to cart <i class="fa fa-shopping-cart"></i></a>
+				</div> <!-- action-wrap.end -->
+			</figcaption>
+		</figure> <!-- card // -->
+	</div> <!-- col.// -->
+	
+	</div>
+
+	
+</div> <!-- row.// -->
+<!-- ============================ COMPONENTS 2  END .// ================================= -->
+
+<br>
+
+<!-- ============================ COMPONENTS 3  ================================= -->
+<div class="row">
+	<div class="col-md-4">
+		<figure class="card card-product-grid card-lg">
+			<div class="img-wrap"><img src="../images/items/9.jpg"></div>
+			<figcaption class="info-wrap">
+					<a class="title">Headset for gaming</a>
+					<p class="text-muted">Logitec</p>
+			</figcaption>
+			<div class="bottom-wrap">
+				<a href="" class="btn btn-primary float-right">Order Now</a>
+				<ul class="rating-stars">
+					<li style="width:80%" class="stars-active"> 
+						<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+					</li>
+					<li>
+						<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+					</li>
+				</ul>	
+				<div class="price-wrap">
+					<span class="price">$19.00</span>
+				</div> <!-- price-wrap.// -->
+			</div> <!-- bottom-wrap.// -->
+		</figure>
+	</div> <!-- col.// -->
+
+	<div class="col-md-4">
+		<figure class="card card-product-grid card-lg">
+			<a href="#" class="img-wrap"><img src="../images/items/10.jpg"></a>
+			<figcaption class="info-wrap">
+					<p>
+						<a href="#" class="title">Another name of item</a>
+					</p>
+					<span class="tag">32 GB</span> <span class="tag">Brand new</span> 
+					<span class="tag">256 px</span>
+					<span class="tag">Water proof</span>
+			</figcaption>
+			<div class="bottom-wrap d-flex align-items-center">
+				<div class="mr-3"> <span class="price h5">$1280</span> </div> <!-- price.// -->	
+				<div class="ml-auto form-inline">
+					<select class="form-control mr-2">
+						<option>Size</option>
+						<option>XL</option>
+						<option>XS</option>
+					</select>
+					<select class="form-control mr-2">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+					</select>
+					<a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i></a>
+				</div>
+			</div> <!-- bottom-wrap.// -->
+		</figure>
+	</div> <!-- col.// -->
+
+	<div class="col-md-4">
+		<figure class="card card-product-grid card-lg">
+			<a href="#" class="img-wrap"><img src="../images/items/11.jpg"></a>
+			<figcaption class="info-wrap">
+					<a href="#" class="title">Another name of item</a>
+					<div class="rating-wrap">
+						<ul class="rating-stars">
+							<li style="width:80%" class="stars-active"> 
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+							</li>
+							<li>
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+							</li>
+						</ul>
+					</div> <!-- rating-wrap.// -->
+			</figcaption>
+			<div class="bottom-wrap">
+				<a href="#" class="btn  btn-primary float-right"> Buy now </a>
+				<div class="price-wrap">
+					<span class="price h5">$1280</span> <br> <small class="text-success">Free shipping</small>
+				</div> <!-- price-wrap.// -->
+			</div> <!-- bottom-wrap.// -->
+		</figure>
+	</div> <!-- col.// -->
+
+</div> <!-- row.// -->
+<!-- ============================ COMPONENTS 3  END .// ================================= -->
+
+<br>
+
+<!-- ============================ COMPONENTS 4  ================================= -->
+<div class="card card-body">
+	<div class="row">
+		<div class="col-md-3">
+			<figure class="card-product-grid mb-0 card-sm">
+				<div class="img-wrap"> <img src="../images/items/1.jpg"> </div>
+				<figcaption class="info-wrap text-center">
+					<a href="#" class="title">Just another  product name goes here</a>
+					<div class="price mt-2">$299.00</div> <!-- price-wrap.// -->
+				</figcaption>
+			</figure> <!-- card // -->
+		</div> <!-- col.// -->
+
+		<div class="col-md-3">
+			<figure class="card-product-grid mb-0 card-sm">
+				<div class="img-wrap"> <img src="../images/items/2.jpg"> </div>
+				<figcaption class="info-wrap text-center">
+					<a href="#" class="title">Just another  product name goes here</a>
+					<div class="price mt-2">$299.00</div> <!-- price-wrap.// -->
+				</figcaption>
+			</figure> <!-- card // -->
+		</div> <!-- col.// -->
+
+		<div class="col-md-3">
+			<figure class="card-product-grid mb-0 card-sm">
+				<div class="img-wrap"> 
+					<img src="../images/items/3.jpg"> 
+					<span class="topbar">
+						<a href="#" class="float-right"><i class="fa fa-heart"></i></a>
+					</span>
+				</div>
+				<figcaption class="info-wrap text-center">
+					<a href="#" class="title">Just another  product name goes here</a>
+					<div class="price mt-2">$299.00</div> <!-- price-wrap.// -->
+				</figcaption>
+			</figure> <!-- card // -->
+		</div> <!-- col.// -->
+
+		<div class="col-md-3">
+			<figure class="card-product-grid mb-0  card-sm">
+				<div class="img-wrap"> <img src="../images/items/4.jpg"> 
+					<span class="topbar">
+						<a href="#" class="float-right"><i class="fa fa-heart"></i></a>
+					</span>
+				</div>
+				<figcaption class="info-wrap text-center">
+					<a href="#" class="title">Just another  product name goes here</a>
+					<div class="price mt-2">$299.00</div> <!-- price-wrap.// -->
+				</figcaption>
+			</figure> <!-- card // -->
+		</div> <!-- col.// -->
+	</div> <!-- row.// -->
+</div> <!-- card // -->
+<!-- ============================ COMPONENTS 4  END .// ================================= -->
+
+<br><br>
+
+<!-- ============================ COMPONENTS 5  ================================= -->
+<div class="card card-body">
+	<div class="row">
+		<div class="col-md-3">
+			<a href="#" class="itemside">
+				<div class="aside"><img src="../images/items/4.jpg" class="img-sm"></div>
+				<div class="info align-self-center">
+					<p class="title">Some name of item goes here nice</p>
+					<div class="price-wrap">
+						<span class="price">$1280</span>
+						<del class="price-old text-muted">$1980</del>
+					</div> <!-- price-wrap.// -->
+				</div>
+			</a>
+		</div> <!-- col.// -->
+
+		<div class="col-md-3">
+			<a href="#" class="itemside">
+				<div class="aside"><img src="../images/items/3.jpg" class="img-sm"></div>
+				<div class="info align-self-center">
+					<p class="title">Some name of item goes here nice</p>
+					<div class="price-wrap">
+						<span class="price">$1280</span>
+						<del class="price-old text-muted">$1980</del>
+					</div> <!-- price-wrap.// -->
+				</div>
+			</a>
+		</div> <!-- col.// -->
+
+		<div class="col-md-3">
+			<a href="#" class="itemside">
+				<div class="aside"><img src="../images/items/2.jpg" class="img-sm"></div>
+				<div class="info align-self-center">
+					<p class="title">Some name of item goes here nice</p>
+					<div class="price">$1280</div> <!-- price-wrap.// -->
+				</div>
+			</a>
+		</div> <!-- col.// -->
+
+		<div class="col-md-3">
+			<a href="#" class="itemside">
+				<div class="aside"><img src="../images/items/1.jpg" class="img-sm"></div>
+				<div class="info align-self-center">
+					<p class="title">Some name of item goes here nice</p>
+					<div class="price">$1280</div> <!-- price-wrap.// -->
+				</div>
+			</a>
+		</div> <!-- col.// -->
+	</div> <!-- row.// -->
+</div> <!-- card // -->
+
+<!-- ============================ COMPONENTS 5  END .// ================================= -->
+
+
+<br> <br>
+
+
+<!-- ============================ COMPONENTS 6  ================================= -->
+<div class="card card-body">
+	<div class="row">
+		<div class="col-md-3">
+			<figure class="itemside mb-4">
+				<div class="aside"><img src="../images/items/1.jpg" class="border img-sm"></div>
+				<figcaption class="info align-self-center">
+					<a href="#" class="title">Some name of item goes here nice</a>
+					<a href="#" class="btn btn-light text-primary btn-sm"> Add to cart </a>
+				</figcaption>
+			</figure>
+		</div> <!-- col.// -->
+
+		<div class="col-md-3">
+			<figure class="itemside mb-4">
+				<div class="aside"><img src="../images/items/2.jpg" class="border img-sm"></div>
+				<figcaption class="info align-self-center">
+					<a href="#" class="title">Great product name is here</a>
+					<a href="#" class="btn btn-light text-primary btn-sm"> Add to cart </a>
+				</figcaption>
+			</figure>
+		</div> <!-- col.// -->
+
+		<div class="col-md-3">
+			<figure class="itemside mb-4">
+				<div class="aside"><img src="../images/items/3.jpg" class="border img-sm"></div>
+				<figcaption class="info align-self-center">
+					<a href="#" class="title">Best name of item goes here demo</a>
+					<a href="#" class="btn btn-light text-primary btn-sm"> Add to cart </a>
+				</figcaption>
+			</figure>
+		</div> <!-- col.// -->
+
+		<div class="col-md-3">
+			<figure class="itemside mb-4">
+				<div class="aside"><img src="../images/items/4.jpg" class="border img-sm"></div>
+				<figcaption class="info align-self-center">
+					<a href="#" class="title">Some name of item goes here nice</a>
+					<a href="#" class="btn btn-light text-primary btn-sm"> Add to cart </a>
+				</figcaption>
+			</figure>
+		</div> <!-- col.// -->
+		<div class="col-md-3">
+			<figure class="itemside mb-4">
+				<div class="aside"><img src="../images/items/5.jpg" class="border img-sm"></div>
+				<figcaption class="info align-self-center">
+					<a href="#" class="title">Another name of item goes here</a>
+					<a href="#" class="btn btn-light text-primary btn-sm"> Add to cart </a>
+				</figcaption>
+			</figure>
+		</div> <!-- col.// -->
+
+		<div class="col-md-3">
+			<figure class="itemside mb-4">
+				<div class="aside"><img src="../images/items/6.jpg" class="border img-sm"></div>
+				<figcaption class="info align-self-center">
+					<a href="#" class="title">Great item name goes here nice</a>
+					<a href="#" class="btn btn-light text-primary btn-sm"> Add to cart </a>
+				</figcaption>
+			</figure>
+		</div> <!-- col.// -->
+
+		<div class="col-md-3">
+			<figure class="itemside mb-4">
+				<div class="aside"><img src="../images/items/7.jpg" class="border img-sm"></div>
+				<figcaption class="info align-self-center">
+					<a href="#" class="title">Some name of item goes here nice</a>
+					<a href="#" class="btn btn-light text-primary btn-sm"> Add to cart </a>
+				</figcaption>
+			</figure>
+		</div> <!-- col.// -->
+
+		<div class="col-md-3">
+			<figure class="itemside mb-4">
+				<div class="aside"><img src="../images/items/9.jpg" class="border img-sm"></div>
+				<figcaption class="info align-self-center">
+					<a href="#" class="title">Some name of item goes here nice</a>
+					<a href="#" class="btn btn-light text-primary btn-sm"> Add to cart </a>
+				</figcaption>
+			</figure>
+		</div> <!-- col.// -->
+	</div> <!-- row.// -->
+</div> <!-- card // -->
+
+<!-- ============================ COMPONENTS 6  END .// ================================= -->
+
+
+
+
+</div> <!-- container .//  -->
+</section>
+
+    
+
+{% endblock content %}

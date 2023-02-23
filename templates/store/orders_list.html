@@ -1,0 +1,47 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %} Order History {% endblock %}
+
+{% block content %}
+
+<br/>
+
+
+    <div class="container">
+<div class="text-center jumbotron jumbotron-image">
+    <h1 class="mb-3">Order History</h1>
+    <br/>
+    {% if order_details %}
+    <table class="table table-stripe table table-borderless table-shopping-cart">
+        <thead>
+            <tr class="small text-uppercase">
+                <th scope="col">Order Number</th>
+                <th scope="col">Order Date</th>
+                <th scope="col">Total Amount</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in order_details %}
+                <tr>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.created }}</td>
+                    <td>{{ order.total }}</td>
+                    <td><i class="fas fa-check"></i></td>
+                    <td><a href="">View Order</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>You have not placed any orders yet</p>
+    <br/>
+    <br/>
+    <a href="{% url 'home' %}" class="btn btn-secondary success"> Continue Shopping</a>
+    {% endif %}
+</div>
+</div>
+
+{% endblock content %}
